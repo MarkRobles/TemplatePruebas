@@ -1,0 +1,13 @@
+﻿@model IEnumerable<M0502.Models.Comment>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pagina Principal</h2>
+
+<h3>Vista Parcial con Html.Partial:</h3>
+@Html.Partial("_CommentList",Model)
+
+
+<h3>Vista Parcial con Html.Action:</h3>
+@Html.Action("_CommentList","Comment");

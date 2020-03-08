@@ -88,3 +88,6 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<h1>Comentarios:</h1>
+@Html.Action("_CommentsListById","Comment",new { id= Model.ProductID});
