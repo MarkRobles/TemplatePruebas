@@ -11,7 +11,9 @@ namespace M0502.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var VM = new Models.VielModelComments();
+            var Comments = VM.Comments.Take(5);
+            return View(Comments);
         }
     }
 }

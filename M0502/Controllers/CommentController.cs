@@ -17,5 +17,24 @@ namespace M0502.Controllers
 
             return View(Comment);
         }
+
+
+        //Para que no se pueda invocar desde la url, solo desde otras vistas
+        [ChildActionOnly]
+        public ActionResult _CommentList()
+        {
+            var VM = new Models.VielModelComments();
+            var Commets =
+                VM.Comments.Take(5);
+            return View(Commets);
+        }
+
+        [ChildActionOnly]
+        public ActionResult _CommentsListById(int id)
+        {
+            var VM = new Models.VielModelComments();
+            var Comments = VM.Comments.Where(c => c.ID == id);
+            return View("_CommentList",Comments);
+        }
     }
 }
