@@ -17,8 +17,9 @@ namespace M0502.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            var Products = db.Products.ToArray();
+            return View(Products);
+       
         }
 
         // GET: Products/Details/5
