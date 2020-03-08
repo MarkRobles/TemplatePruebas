@@ -1,0 +1,15 @@
+﻿@model M0502.Models.Comment
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Comentario</h2>
+<div>
+    @Model.Subject
+</div>
+<div>
+    @*Este helper se utiliza para que razor no convierta a html su contenido (porque ya viene asi)
+        Solo se debe utilizar cuando sea absolutamente necesario ya que por motivos de seguridad razor siempre convierte todo a html. *@
+    @Html.Raw(Model.HtmlSubject)
+</div>
